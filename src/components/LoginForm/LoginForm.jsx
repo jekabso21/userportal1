@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, ArrowRight } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import defaultUsers from '../../data/users.json';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -10,6 +11,8 @@ const LoginForm = () => {
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const t = useTranslation();
+
+  usePageTitle(t.auth.signIn);
 
   const handleSubmit = (e) => {
     e.preventDefault();

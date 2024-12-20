@@ -3,6 +3,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { Mail, Lock, User, Calendar, ArrowRight, Check, X } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import { validateAge, validatePassword } from '../../utils/validation';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const RegisterForm = () => {
   const [formData, setFormData] = useState({
@@ -20,6 +21,8 @@ const RegisterForm = () => {
   
   const navigate = useNavigate();
   const t = useTranslation();
+
+  usePageTitle(t.auth.signUp);
 
   useEffect(() => {
     setPasswordStrength(validatePassword(formData.password));

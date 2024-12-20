@@ -3,11 +3,14 @@ import { useNavigate } from 'react-router-dom';
 import { User, Mail, Calendar, LogOut } from 'lucide-react';
 import { useTranslation } from '../../hooks/useTranslation';
 import './Dashboard.css';
+import { usePageTitle } from '../../hooks/usePageTitle';
 
 const Dashboard = () => {
   const [user, setUser] = useState(null);
   const navigate = useNavigate();
   const t = useTranslation();
+
+  usePageTitle(t.dashboard.welcome);
 
   useEffect(() => {
     const userData = localStorage.getItem('user');
