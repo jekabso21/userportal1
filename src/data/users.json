@@ -1,0 +1,10 @@
+{
+    "defaultUsers": [
+      {
+        "email": "demo@example.com",
+        "password": "Demo123!",
+        "username": "demouser",
+        "age": 25
+      }
+    ]
+}
